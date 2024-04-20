@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Desafio Focus Timer</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="./src/main.js" defer></script>
+</head>
+<body>
+
+    <div id="app" class="flex">
+
+        <div id="container">
+
+            <div id="toggleMode">
+                <span class="sr-only">Ativar/Desativar dark mode</span>
+                <i class="ph ph-sun"></i>
+                <i class="ph ph-moon-stars"></i>
+            </div>
+
+            <div id="time" class="flex">
+                <span id="hours">22</span>
+                <span>:</span>
+                <span id="minutes">34</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </div>
+
+            <div id="controls" class="flex">
+                <button 
+                data-action="toggleRunning"
+                class="ph ph-play-circle">
+                    <span class="sr-only">Iniciar contador</span>
+                </button>
+                
+                <button 
+                data-action="toggleRunning"
+                class="ph ph-pause-circle">
+                    <span class="sr-only">Pausar contador</span>
+                </button>
+                
+                <button 
+                data-action="reset"
+                class="ph ph-stop-circle">
+                    <span class="sr-only">Resetar contador</span>
+                </button>
+
+                <button 
+                data-action="set"
+                class="ph ph-timer">
+                    <span class="sr-only">Definiar a hora</span>
+                </button>
+                
+                <button 
+                data-action="increment"
+                class="ph ph-plus-circle">
+                    <span class="sr-only">Incrementar Contador</span>
+                </button>
+                
+                <button 
+                data-action="decrement"
+                class="ph ph-minus-circle">
+                    <span class="sr-only">Decrementar Contador</span>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="sounds-effects">
+            <button 
+            data-action="florestMusic"
+            class="ph ph-tree">
+                <span class="sr-only">Efeito de som de floresta</span>
+            </button>
+            
+            <button 
+            data-action="rainMusic"
+            class="ph ph-cloud-rain">
+                <span class="sr-only">Efeito de som de chuva</span>
+            </button>
+            
+            <button 
+            data-action="coffeeShopMusic"
+            class="ph ph-storefront">
+                <span class="sr-only">Efeito de som de cafeteria</span>
+            </button>
+            
+            <button 
+            data-action="bonfireMusic"
+            class="ph ph-fire">
+                <span class="sr-only">Efeito de som de fogueira</span>
+            </button>
+        </div>        
+
+    </div>
+
+    
+</body>
+</html>

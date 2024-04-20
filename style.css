@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-primary-color: hsl(240, 6%, 21%);    
+    --btn-bg-color: hsl(240, 9%, 89%);
+    --btn-bg-color-selected: hsl(194, 97%, 31%);
+
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.dark {
+    --bg-color: hsl(240, 6%, 21%);
+    --text-primary-color: #70b5e0;  
+    --btn-bg-color: hsl(0, 0%, 50%);         
+}
+
+html.dark .ph-moon-stars,
+html:not(.dark) .ph-sun{
+    display: none;
+}
+
+body {
+    display: grid;
+    place-content: center;
+
+    height: 100vh;
+    
+    background-color: var(--bg-color);
+
+    font-family: "Roboto", sans-serif;
+    color: var(--text-primary-color);
+}
+
+.flex {
+    display: flex;    
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    color: var(--text-primary-color);
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+#app {
+    gap: 19rem;  
+    align-items: center;
+    
+}
+
+#container {    
+    text-align: center;
+}
+
+#toggleMode {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    
+    font-size: 4.8rem;    
+}
+
+#toggleMode:hover {
+    animation: rotate 2s linear infinite;
+    color: red; 
+}
+
+
+#time {
+    font-size: 9.6rem;
+    font-weight: 500;
+    
+    place-content: center;       
+}
+
+#controls {    
+    padding: 2.2rem 4rem;    
+    gap: 4rem;
+}
+
+#controls button {
+    font-size: 4.8rem;
+    background: transparent;
+    color: var(--text-primary-color);    
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+    display: none;
+}
+
+
+#sounds-effects {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-columns: repeat(2, max-content);
+    gap: 3.2rem;
+}
+
+#sounds-effects .ph {  
+    
+    font-size: 4rem;
+    
+    padding: 4.8rem;
+    border-radius: 2.4rem;
+    border: 0;       
+}
+
+#sounds-effects .ph:hover {
+    animation: shake .8s ease-in-out alternate;
+}
+
+.btn-selected {    
+    color: #FFF;
+    background-color: var(--btn-bg-color-selected);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1024px) {
+    #app {        
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    #toggleMode {
+        font-size: 3rem
+    }
+
+
+    #time {
+        font-size: 7rem;
+        font-weight: 500;
+        
+        place-content: center;       
+    }
+
+    #controls button {
+        font-size: 3rem;  
+    }
+
+    #controls {  
+         
+        padding: 1.6rem 2rem;    
+        gap: 2rem;
+    }
+
+
+    #sounds-effects .ph {      
+        font-size: 3rem;
+        
+        padding: 2.8rem;
+        border-radius: 2.4rem;         
+    }   
+
+}
+
+/* ANIMAÇÕES */
+
+@keyframes shake  {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
